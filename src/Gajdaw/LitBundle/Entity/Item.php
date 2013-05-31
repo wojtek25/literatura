@@ -21,6 +21,35 @@ class Item
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(title="Title", type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * Set title
+     *
+     * @param string $title
+     * @return Item
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get title
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
     /**
      * Get id
