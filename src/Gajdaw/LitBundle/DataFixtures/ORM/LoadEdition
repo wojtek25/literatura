@@ -1,0 +1,29 @@
+<?php
+
+namespace Gajdaw\LitBundle\DataFixtures\ORM;
+
+use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
+use Gajdaw\LitBundle\Entity\Edition;
+use Symfony\Component\Yaml\Yaml;
+
+class LoadEdition implements FixtureInterface
+{
+    function load(ObjectManager $manager)
+    {
+        $filename =
+            __DIR__ .
+                DIRECTORY_SEPARATOR . '..' .
+                DIRECTORY_SEPARATOR . '..' .
+                DIRECTORY_SEPARATOR . 'Data/edition.yml';
+
+        $yml = Yaml::parse(file_get_contents($filename));
+        foreach ($yml as $item) {
+            $edition = new Edition();
+            $edition->setName($item['number']);
+            $manager->persist($edition);
+        }
+        $manager->flush();
+
+    }
+}
