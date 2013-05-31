@@ -6,6 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class GenreControllerTest extends WebTestCase
 {
+     public function testUrlIndex()
+     {
+         $client = static::createClient();
+         $crawler = $client->request('GET', '/genre/');
+         $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /genre/");
+         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
+     }
     /*
     public function testCompleteScenario()
     {
