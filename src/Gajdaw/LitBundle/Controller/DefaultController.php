@@ -1,6 +1,6 @@
 <?php
 
-namespace Gajdaw\GajdawLitBundle\Controller;
+namespace Gajdaw\LitBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;

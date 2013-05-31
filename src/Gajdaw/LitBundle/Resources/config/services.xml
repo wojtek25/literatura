@@ -6,11 +6,11 @@
 
     <!--
     <parameters>
-        <parameter key="gajdaw_gajdaw_lit.example.class">Gajdaw\GajdawLitBundle\Example</parameter>
+        <parameter key="gajdaw_lit.example.class">Gajdaw\LitBundle\Example</parameter>
     </parameters>
 
     <services>
-        <service id="gajdaw_gajdaw_lit.example" class="%gajdaw_gajdaw_lit.example.class%">
+        <service id="gajdaw_lit.example" class="%gajdaw_lit.example.class%">
             <argument type="service" id="service_id" />
             <argument>plain_value</argument>
             <argument>%parameter_name%</argument>
