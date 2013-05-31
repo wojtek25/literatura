@@ -1,2 +1,2 @@
-- { name: Novel, Shortcut: Nov}
-- { name: Short story, Shortcut: ShSt}
+- { name: Novel, shortcut: Nov}
+- { name: Short story, shortcut: ShSt}
