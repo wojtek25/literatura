@@ -24,7 +24,7 @@ class Item
     /**
      * @var string
      *
-     * @ORM\Column(title="Title", type="string", length=255)
+     * @ORM\Column(name="Title", type="string", length=255)
      */
     private $title;
 
