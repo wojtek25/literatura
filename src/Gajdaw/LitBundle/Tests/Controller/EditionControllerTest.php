@@ -4,21 +4,22 @@ namespace Gajdaw\LitBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LanguageControllerTest extends WebTestCase
+class EditionControllerTest extends WebTestCase
 {
+    /*
     public function testCompleteScenario()
     {
         // Create a new client to browse the application
         $client = static::createClient();
 
         // Create a new entry in the database
-        $crawler = $client->request('GET', '/language/');
-        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /language/");
+        $crawler = $client->request('GET', '/edition/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /edition/");
         $crawler = $client->click($crawler->selectLink('Create a new entry')->link());
-    }/*
+
         // Fill in the form and submit it
         $form = $crawler->selectButton('Create')->form(array(
-            'gajdaw_litbundle_languagetype[field_name]'  => 'Test',
+            'gajdaw_litbundle_editiontype[field_name]'  => 'Test',
             // ... other fields to fill
         ));
 
@@ -32,7 +33,7 @@ class LanguageControllerTest extends WebTestCase
         $crawler = $client->click($crawler->selectLink('Edit')->link());
 
         $form = $crawler->selectButton('Edit')->form(array(
-            'gajdaw_litbundle_languagetype[field_name]'  => 'Foo',
+            'gajdaw_litbundle_editiontype[field_name]'  => 'Foo',
             // ... other fields to fill
         ));
 
