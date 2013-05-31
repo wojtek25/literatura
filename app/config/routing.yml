@@ -1,0 +1,5 @@
+gajdaw_lit:
+    resource: "@GajdawLitBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
