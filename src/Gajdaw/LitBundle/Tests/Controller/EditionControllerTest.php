@@ -6,6 +6,32 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class EditionControllerTest extends WebTestCase
 {
+    public function testUrlIndex()
+    {
+        $client = static::createClient();
+        $crawler = $client->request('GET', '/edition/');
+        $this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /course/");
+
+        //rekordy sparsowane ze strony WWW
+        //do tablicy $rekordy
+        $rekordy = array();
+        $crawler = $crawler->filter('table.records_list > tbody > tr > td:nth-child(2)');
+        foreach ($crawler as $domElement) {
+            $rekordy[] = $domElement->nodeValue;
+        }
+
+        //wyniki, które znamy
+        //na podstawie pliku yaml
+        $expected = array(
+            '1',
+            '2',
+            '3',
+            '4',
+            '5',
+        );
+        $this->assertEquals($expected, $rekordy, 'Rekordy: edition');
+
+    }
     /*
     public function testCompleteScenario()
     {

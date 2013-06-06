@@ -20,7 +20,7 @@ class LoadEdition implements FixtureInterface
         $yml = Yaml::parse(file_get_contents($filename));
         foreach ($yml as $item) {
             $edition = new Edition();
-            $edition->setName($item['number']);
+            $edition->setNumber($item['number']);
             $manager->persist($edition);
         }
         $manager->flush();
